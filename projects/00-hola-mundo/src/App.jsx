@@ -1,13 +1,24 @@
 import { TwitterFollowCard } from './twitterFollowCard'
 export function App() {
-    const formatUserName = (userName) => `@${userName}`
+    
+    //const formattedUserName = (<span>@Rodrigo</span>) // Esto es un elemento y puede pasarse directamente a la tarjeta
+    //const formatUserName = (userName) => `@${userName}`
+    // userName = `@${userName} // Modificar la prop es una mala praxis, si es necesario, crear una cost diferente
+    
     return (
         <section className='App'>
-            <TwitterFollowCard formatUserName = {formatUserName} isFollowing={true} userName="kikobeats" name='Rodrigo Guardamagna'/>
-            <TwitterFollowCard formatUserName = {formatUserName} isFollowing={true} userName="midudev" name='Miguel Angel Duran'/>
-            <TwitterFollowCard formatUserName = {formatUserName} isFollowing={false} userName="elonmusk" name='Elon Musk'/>
-            <TwitterFollowCard formatUserName = {formatUserName} isFollowing userName="vxnder" name='VanderHart'/>
-            <TwitterFollowCard formatUserName = {formatUserName} userName="midudev" name='Miguel Angel Duran'/>
+            {/* <TwitterFollowCard formatUserName = {formatUserName} isFollowing={true} userName="kikobeats" name='Rodrigo Guardamagna'/> */}
+            {/* <TwitterFollowCard isFollowing={true} userName="midudev" name='Miguel Angel Duran'/>
+            <TwitterFollowCard isFollowing={false} userName="elonmusk" name='Elon Musk'/>
+            <TwitterFollowCard isFollowing userName="vxnder" name='VanderHart'/> */}
+            
+            <TwitterFollowCard isFollowing userName="midudev">
+                <strong>Miguel Angel Duran</strong>
+            </TwitterFollowCard>
+            <TwitterFollowCard isFollowing={false} userName="vxnder">
+                <strong>VanderHart</strong>
+            </TwitterFollowCard>
+            
         </section>
     )
 }
