@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import { TwitterFollowCard } from './twitterFollowCard'
 export function App() {
     
@@ -5,6 +6,8 @@ export function App() {
     //const formatUserName = (userName) => `@${userName}`
     // userName = `@${userName} // Modificar la prop es una mala praxis, si es necesario, crear una cost diferente
     
+    const [name, setName] = useState('Rodrigo')
+
     return (
         <section className='App'>
             {/* <TwitterFollowCard formatUserName = {formatUserName} isFollowing={true} userName="kikobeats" name='Rodrigo Guardamagna'/> */}
@@ -16,9 +19,13 @@ export function App() {
                 <strong>Miguel Angel Duran</strong>
             </TwitterFollowCard>
             <TwitterFollowCard isFollowing={false} userName="vxnder">
-                <strong>VanderHart</strong>
+                <strong>{name}</strong>
             </TwitterFollowCard>
             
+            <button onClick={() => setName('Guardamagna')}>
+                Cambio Nombre
+            </button>
+
         </section>
     )
 }
