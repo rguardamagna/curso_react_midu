@@ -38,11 +38,17 @@
 }
 
 .tw-follow-card-button.is-following {
-    border: 1px solid red;
+    border: 1px solid #bbb;
+    background: transparent;
+    color : #fff;
+    width: 140px;
 }
 
 .tw-follow-card-button.is-following:hover {
-    background-color: red;
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    transition: .3s ease ;
 }
 
 .tw-follow-card-button {
@@ -55,7 +61,23 @@
 }
 
 .tw-follow-card-button:hover {
-    background-color: #09f;
+    opacity: .8;
+}
+
+.tw-follow-card-text {
+    display: block;
+}
+
+.tw-follow-card-button.is-following:hover .tw-follow-card-stopFollow {
+    display: block;
+}
+
+.tw-follow-card-button.is-following:hover .tw-follow-card-text {
+    display: none;
+}
+
+.tw-follow-card-stopFollow {
+    display: none;
 }
 
 .App {
