@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import confetti from 'canvas-confetti'
 
 import { Square } from "./components/Square"
@@ -56,6 +56,13 @@ function App() {
     }
   
   }
+
+  useEffect(() => {
+    // Como mínimo se ejecuta una vez, cuando se monta el componente
+    console.log('codigo a ejecutar en el dom')
+  }, []) 
+  // si está vacío se ejecuta solo una vez, 
+  //si tiene "winner" y "turn" cada vez que cambia el turno o hay un ganador
 
   return (
     <main className='board'>
